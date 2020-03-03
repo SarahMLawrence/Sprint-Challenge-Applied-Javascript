@@ -17,3 +17,51 @@
     <div class="right-button"> > </div>
   </div>
 */
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n){
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+
+
+//const newCarousel = document.querySelector('.carousel-container');
+
+
+function showSlides (n){
+  var i;
+  const carousel = document.createElement('div');
+  carousel.classList.add('carousel');
+
+  const lButton = document.createElement('div');
+  lButton.classList.add('left-button');
+
+  const img1 = document.createElement('img');
+  img1.src = "./assets/carousel/mountains.jpeg";
+
+  const img2 = document.createElement('img');
+  const img3 = document.createElement('img');
+  const img4 = document.createElement('img');
+
+  const rButton = document.createElement('div');
+  rButton.classList.add('right-button');
+
+  if (n > carousel.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = carousel.length}
+
+  carousel.appendChild(lButton);
+  carousel.appendChild(img1);
+  carousel.appendChild(img2);
+  carousel.appendChild(img3);
+  carousel.appendChild(img4);
+  carousel.appendChild(rButton);
+
+
+  return carousel;
+
+}
